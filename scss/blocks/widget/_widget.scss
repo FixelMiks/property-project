@@ -1,0 +1,50 @@
+.widget {
+  &:not(:last-child) {
+    margin-bottom: 33px;
+  }
+
+  &__title {
+    position: relative;
+    margin: 0 0 21px;
+    padding-right: 30px;
+    font: {
+      weight: 700;
+      size: 18px;
+    }
+    line-height: 1.16;
+    color: #000;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      background: {
+        image: url("./../img/icons/chevron-up.svg");
+        repeat: no-repeat;
+        size: initial;
+        position: center;
+      }
+      transform: translateY(-50%);
+      transition: all 0.2s ease-in;
+      transition-property: transform;
+    }
+  }
+
+  &.hidden {
+    .widget {
+      &__title {
+        &::after {
+          transform: translateY(-50%) rotate(-180deg);
+        }
+      }
+
+      &__body {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.location-checkbox {
+  width: 100%;
+  height: 100%;
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    transition: all $animation;
+    transition-property: background-color;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #ffcf26;
+    }
+  }
+
+  input[type="checkbox"] {
+    &:checked ~ .location-checkbox__btn {
+      background-color: #ffcf26;
+
+      &:hover {
+        background-color: #e1b720;
+      }
+    }
+  }
+}
