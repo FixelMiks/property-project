@@ -1,0 +1,63 @@
+.radio {
+  position: relative;
+  display: block;
+  cursor: pointer;
+
+  &__input {
+    @include visually-hidden();
+  }
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #777;
+    border-radius: 50%;
+    background-color: $white;
+    transform: translateY(-50%);
+    transition: all $animation;
+    transition-property: background-color;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      border-radius: 50%;
+      width: 8px;
+      height: 8px;
+      background-color: #3C3C3C;
+      opacity: 0;
+      visibility: hidden;
+      transition: all $animation;
+      transition-property: opacity, visibility;
+    }
+  }
+
+  &__title {
+    display: block;
+    padding-left: 30px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #3C3C3C;
+  }
+
+  &__input:checked {
+    & ~ .radio__btn {
+      background-color: #ffe074;
+
+      &::after {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    & ~ .radio__title {
+      font-weight: 700;
+    }
+  }
+}

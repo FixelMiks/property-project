@@ -1,12 +1,16 @@
 @import './vendor/normalize';
 
 @import './mixins/font-face';
+@import './mixins/visually-hidden';
 
 @import './global/vars';
 @import './global/fonts';
 @import './global/global';
 
 @import './components/container';
+@import './components/radio';
+@import './components/checkbox';
+@import './components/switch';
 
 @import './blocks/general/general';
 
@@ -22,3 +26,4 @@
 
 @import './blocks/location/location';
 @import './blocks/location/location-checkbox';
+

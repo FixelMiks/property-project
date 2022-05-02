@@ -1,0 +1,53 @@
+.switch {
+  position: relative;
+  display: block;
+  cursor: pointer;
+
+  &__input {
+    @include visually-hidden();
+  }
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 37px;
+    height: 20px;
+    background-color: #777;
+    transform: translateY(-50%);
+    transition: all $animation;
+    transition-property: background-color;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+      background-color: #3C3C3C;
+    }
+  }
+
+  &__title {
+    display: block;
+    padding-left: 52px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #3C3C3C;
+  }
+
+  &__input:checked {
+    & ~ .switch__btn {
+      background-color: #ffe074;
+    }
+
+    & ~ .switch__title {
+      font-weight: 700;
+    }
+  }
+}

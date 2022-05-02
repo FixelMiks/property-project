@@ -29,14 +29,37 @@
         position: center;
       }
       transform: translateY(-50%);
-      transition: all 0.2s ease-in;
+      transition: all $animation;
       transition-property: transform;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__more {
+    margin-top: 15px;
+    border-bottom: 1px solid transparent;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #4290C9;
+    transition: all $animation;
+    transition-property: border-color;
+
+    &:hover {
+      border-color: currentColor;
     }
   }
 
   &.hidden {
     .widget {
       &__title {
+        margin: 0;
+
         &::after {
           transform: translateY(-50%) rotate(-180deg);
         }

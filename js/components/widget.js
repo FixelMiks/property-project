@@ -1,7 +1,7 @@
 const widgets = document.querySelectorAll(".widget");
 
 widgets.forEach(widget => {
-  widget.addEventListener("click", () => {
+  widget.children[0].addEventListener("click", () => {
     widget.classList.toggle('hidden');
   });
 });

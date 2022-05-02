@@ -1,6 +1,12 @@
 .location-checkbox {
+  display: block;
   width: 100%;
   height: 100%;
+  cursor: pointer;
+
+  &__input {
+    @include visually-hidden();
+  }
 
   &__btn {
     display: flex;
@@ -15,20 +21,17 @@
     text-align: center;
     transition: all $animation;
     transition-property: background-color;
-    cursor: pointer;
 
     &:hover {
       background-color: #ffcf26;
     }
   }
 
-  input[type="checkbox"] {
-    &:checked ~ .location-checkbox__btn {
-      background-color: #ffcf26;
+  &__input:checked ~ &__btn {
+    background-color: #ffcf26;
 
-      &:hover {
-        background-color: #e1b720;
-      }
+    &:hover {
+      background-color: #e1b720;
     }
   }
 }
