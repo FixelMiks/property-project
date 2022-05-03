@@ -14,7 +14,7 @@
     display: inline-block;
     width: 18px;
     height: 18px;
-    border: 1px solid #777;
+    border: 1px solid $boulder;
     border-radius: 2px;
     background-color: $white;
     transform: translateY(-50%);
@@ -48,12 +48,12 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
-    color: #3c3c3c;
+    color: $mineShaft;
   }
 
   &__input:checked {
     & ~ .checkbox__btn {
-      background-color: #ffe074;
+      background-color: $kournikova;
 
       &::after {
         opacity: 1;

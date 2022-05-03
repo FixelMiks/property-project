@@ -15,7 +15,7 @@
     border-radius: 10px;
     width: 37px;
     height: 20px;
-    background-color: #777;
+    background-color: $boulder;
     transform: translateY(-50%);
     transition: all $animation;
     transition-property: background-color;
@@ -29,7 +29,7 @@
       border-radius: 50%;
       width: 16px;
       height: 16px;
-      background-color: #3C3C3C;
+      background-color: $mineShaft;
       transform: translateY(-50%);
       transition: all $animation;
       transition-property: left;
@@ -42,12 +42,12 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
-    color: #3C3C3C;
+    color: $mineShaft;
   }
 
   &__input:checked {
     & ~ .switch__btn {
-      background-color: #ffe074;
+      background-color: $kournikova;
 
       &::after {
         left: calc(100% - 19px);

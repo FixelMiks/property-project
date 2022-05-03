@@ -1,7 +1,7 @@
 .location {
   &__row {
     overflow: hidden;
-    border: 1px solid #d6d6d6;
+    border: 1px solid $alto;
     height: 50px;
 
     &:nth-of-type(1) {

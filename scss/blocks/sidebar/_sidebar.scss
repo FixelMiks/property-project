@@ -1,11 +1,10 @@
 .sidebar {
-  &__wrapper {
-    background-color: #f4f4f4;
+  &-form-inner {
+    background-color: $wildSand;
   }
 
   &__form {
-    position: relative;
-    min-width: 270px;
+    width: 270px;
   }
 
   &__btns {
@@ -25,22 +24,26 @@
     transition: all $animation;
     transition-property: background-color;
 
-    .btn-menu {
-      position: absolute;
-      top: 15px;
-      left: calc((24px + 15px) * (-1));
-    }
-
     &__wrapper {
       position: fixed;
       top: 0;
       right: 0;
       bottom: 0;
-      height: 100vh;
-      padding: 30px 15px;
       transform: translateX(100%);
       transition: all $animation;
       transition-property: transform;
+    }
+
+    .btn-menu {
+      position: absolute;
+      top: 15px;
+      right: calc(100% + 15px);
+    }
+
+    &-form-inner {
+      overflow-y: auto;
+      height: 100vh;
+      padding: 30px 15px;
     }
 
     &.is-open {
@@ -49,7 +52,7 @@
       right: 0;
       bottom: 0;
       left: 0;
-      background-color: rgba($color: #000000, $alpha: 0.5);
+      background-color: rgba($color: $black, $alpha: 0.5);
 
       .sidebar__wrapper {
         transform: translateX(0);

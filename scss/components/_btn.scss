@@ -7,13 +7,13 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #000;
-  background-color: #FFCF26;
+  color: $black;
+  background-color: $sunglow;
   transition: all $animation;
   transition-property: border-color, background-color;
 
   &[type="reset"] {
-    border-color: #D6D6D6;
+    border-color: $alto;
     background-color: transparent;
 
     span {
@@ -24,7 +24,7 @@
   }
 
   &:hover {
-    border-color: #e1b720;
-    background-color: #e1b720;
+    border-color: darken($color: $sunglow, $amount: 10%);
+    background-color: darken($color: $sunglow, $amount: 10%);
   }
 }

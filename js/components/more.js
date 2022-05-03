@@ -1,6 +1,8 @@
 const more = document.querySelector(".widget__more");
 const category = document.querySelector(".category");
 const categoryItems = category.children;
+const widgetBody = category.parentElement;
+
 
 const categoryItemsHide = () => {
   for (let i = 5; i < categoryItems.length; i++) {
@@ -24,10 +26,13 @@ more.addEventListener('click', (e) => {
     more.textContent = "Показать ещё";
 
     categoryItemsHide();
+    widgetBody.removeAttribute('style');
   } else {
     more.classList.add("hide");
     more.textContent = "Скрыть дополнительные опции";
 
     categoryItemsShow();
+    widgetBody.style.height = widgetBody.scrollHeight + 'px';
   }
 });
+

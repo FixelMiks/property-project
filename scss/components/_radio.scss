@@ -14,7 +14,7 @@
     display: inline-block;
     width: 18px;
     height: 18px;
-    border: 1px solid #777;
+    border: 1px solid $boulder;
     border-radius: 50%;
     background-color: $white;
     transform: translateY(-50%);
@@ -30,7 +30,7 @@
       border-radius: 50%;
       width: 8px;
       height: 8px;
-      background-color: #3C3C3C;
+      background-color: $mineShaft;
       opacity: 0;
       visibility: hidden;
       transform: translate(-50%, -50%);
@@ -45,12 +45,12 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
-    color: #3C3C3C;
+    color: $mineShaft;
   }
 
   &__input:checked {
     & ~ .radio__btn {
-      background-color: #ffe074;
+      background-color: $kournikova;
 
       &::after {
         opacity: 1;

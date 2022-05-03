@@ -23,15 +23,15 @@
     transition-property: background-color;
 
     &:hover {
-      background-color: #ffcf26;
+      background-color: $sunglow;
     }
   }
 
   &__input:checked ~ &__btn {
-    background-color: #ffcf26;
+    background-color: $sunglow;
 
     &:hover {
-      background-color: #e1b720;
+      background-color: darken($color: $sunglow, $amount: 10%);;
     }
   }
 }
