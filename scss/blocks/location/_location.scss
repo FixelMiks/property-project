@@ -8,12 +8,12 @@
       display: grid;
       grid-template-columns: repeat(4, 67px);
       margin-bottom: -1px;
-      border-radius: 4px 4px 0 0;
+      border-radius: $radius $radius 0 0;
       border-bottom-color: transparent;
     }
 
     &:nth-of-type(2) {
-      border-radius: 0 0 4px 4px;
+      border-radius: 0 0 $radius $radius;
     }
   }
 }

@@ -5,6 +5,10 @@
 
   &__form {
     width: 270px;
+
+    & > *:not(:last-child) {
+      margin-bottom: 30px;
+    }
   }
 
   &__btns {

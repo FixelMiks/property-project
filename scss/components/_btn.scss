@@ -2,11 +2,9 @@
   display: block;
   min-width: 270px;
   border: 1px solid transparent;
-  border-radius: 4px;
+  border-radius: $radius;
   padding: 15px;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
+  @include body0_Regular16();
   color: $black;
   background-color: $sunglow;
   transition: all $animation;

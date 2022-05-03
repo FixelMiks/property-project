@@ -1,5 +1,5 @@
 .container {
   margin: 0 auto;
-  padding: 0 15px;
-  max-width: calc(1171px + 15px * 2);
+  padding: 0 $containerIndent;
+  max-width: calc(#{$containerWidth} + #{$containerIndent} * 2);
 }

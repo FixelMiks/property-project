@@ -1,10 +1,9 @@
 .btn-more {
   display: block;
-  border-radius: 4px;
+  border-radius: $radius;
   padding: 25px;
   width: 100%;
-  font-size: 18px;
-  line-height: 21px;
+  @include caption();
   text-align: center;
   color: $bostonBlue;
   background-color: $mercury;

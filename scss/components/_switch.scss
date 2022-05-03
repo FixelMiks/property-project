@@ -39,9 +39,7 @@
   &__title {
     display: block;
     padding-left: 52px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
+    @include body0_Regular16();
     color: $mineShaft;
   }
 
@@ -55,7 +53,7 @@
     }
 
     & ~ .switch__title {
-      font-weight: 700;
+      @include body0_Bold16();
     }
   }
 }

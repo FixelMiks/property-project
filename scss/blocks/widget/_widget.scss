@@ -1,17 +1,9 @@
 .widget {
-  &:not(:last-child) {
-    margin-bottom: 33px;
-  }
-
   &__title {
     position: relative;
     margin: 0;
     padding-right: 30px;
-    font: {
-      weight: 700;
-      size: 18px;
-    }
-    line-height: 1.16;
+    @include title0_Bold18();
     color: $black;
     cursor: pointer;
 
@@ -49,9 +41,7 @@
 
   &__more {
     border-bottom: 1px solid transparent;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
+    @include body0_Regular16();
     color: $bostonBlue;
     transition: all $animation;
     transition-property: border-color;

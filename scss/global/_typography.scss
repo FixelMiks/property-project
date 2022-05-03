@@ -1,0 +1,47 @@
+@mixin title0_Bold18() {
+  font: {
+    weight: 700;
+    size: 18px;
+  }
+  line-height: 21px;
+}
+
+@mixin body0_Regular16() {
+  font: {
+    weight: 400;
+    size: 16px;
+  }
+  line-height: 19px;
+}
+
+@mixin body0_Bold16() {
+  font: {
+    weight: 700;
+    size: 16px;
+  }
+  line-height: 19px;
+}
+
+@mixin body1_Regular14() {
+  font: {
+    weight: 400;
+    size: 14px;
+  }
+  line-height: 16px;
+}
+
+@mixin body1_Bold14() {
+  font: {
+    weight: 700;
+    size: 14px;
+  }
+  line-height: 16px;
+}
+
+@mixin caption() {
+  font: {
+    weight: 400;
+    size: 18px;
+  }
+  line-height: 21px;
+}
