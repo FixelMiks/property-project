@@ -1,8 +1,7 @@
-const sidebarToggleBtn = document.querySelector(".menu-icon-wrapper");
-const menuIcon = document.querySelector(".menu-icon");
 const sidebar = document.querySelector(".sidebar");
+const btnMenu = document.querySelector(".btn-menu");
 
-sidebarToggleBtn.onclick = function () {
-  menuIcon.classList.toggle("menu-icon-active");
+btnMenu.addEventListener("click", () => {
   sidebar.classList.toggle("is-open");
-};
+  btnMenu.classList.toggle("is-active");
+});

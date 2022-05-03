@@ -11,9 +11,7 @@
     position: absolute;
     top: 50%;
     left: 0;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-block;
     border-radius: 10px;
     width: 37px;
     height: 20px;
@@ -24,11 +22,17 @@
 
     &::after {
       content: "";
+      position: absolute;
+      top: 50%;
+      left: calc(0% + 2px);
       display: inline-block;
       border-radius: 50%;
       width: 16px;
       height: 16px;
       background-color: #3C3C3C;
+      transform: translateY(-50%);
+      transition: all $animation;
+      transition-property: left;
     }
   }
 
@@ -44,6 +48,10 @@
   &__input:checked {
     & ~ .switch__btn {
       background-color: #ffe074;
+
+      &::after {
+        left: calc(100% - 19px);
+      }
     }
 
     & ~ .switch__title {

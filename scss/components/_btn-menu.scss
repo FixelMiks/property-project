@@ -1,0 +1,42 @@
+.btn-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 4px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 24px;
+  height: 24px;
+  background: #f4f4f4;
+  cursor: pointer;
+
+  span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: $black;
+    transition: all $animation;
+    transition-property: transform, opacity, visibility;
+  }
+
+  &.is-active {
+    span {
+      width: 21px;
+
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(4px, 4px);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(4px, -4px);
+      }
+    }
+  }
+}

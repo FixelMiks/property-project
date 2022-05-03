@@ -1,20 +1,33 @@
-// const showMoreOptions = document.querySelector(".widget__btn-hidden-show");
-// const hiddenCheckBoxes = document.querySelectorAll(".checkbox--hidden");
+const more = document.querySelector(".widget__more");
+const category = document.querySelector(".category");
+const categoryItems = category.children;
 
-// showMoreOptions.onclick = function (e) {
-//   e.preventDefault();
+const categoryItemsHide = () => {
+  for (let i = 5; i < categoryItems.length; i++) {
+    categoryItems[i].style.display = "none";
+  }
+}
 
-//   if (showMoreOptions.dataset.options == "hidden") {
-//     hiddenCheckBoxes.forEach(function (item) {
-//       item.style.display = "block";
-//     });
-//     showMoreOptions.innerText = "Скрыть дополнительные опции";
-//     showMoreOptions.dataset.options = "visible";
-//   } else if (showMoreOptions.dataset.options == "visible") {
-//     hiddenCheckBoxes.forEach(function (item) {
-//       item.style.display = "none";
-//     });
-//     showMoreOptions.innerText = "Показать ещё";
-//     showMoreOptions.dataset.options = "hidden";
-//   }
-// };
+const categoryItemsShow = () => {
+  for (let i = 5; i < categoryItems.length; i++) {
+    categoryItems[i].removeAttribute('style');
+  }
+}
+
+categoryItemsHide();
+
+more.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  if (more.classList.contains("hide")) {
+    more.classList.remove("hide");
+    more.textContent = "Показать ещё";
+
+    categoryItemsHide();
+  } else {
+    more.classList.add("hide");
+    more.textContent = "Скрыть дополнительные опции";
+
+    categoryItemsShow();
+  }
+});

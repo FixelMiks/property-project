@@ -5,7 +5,7 @@
 
   &__title {
     position: relative;
-    margin: 0 0 21px;
+    margin: 0;
     padding-right: 30px;
     font: {
       weight: 700;
@@ -14,6 +14,7 @@
     line-height: 1.16;
     color: #000;
     cursor: pointer;
+
 
     &::after {
       content: "";
@@ -34,6 +35,12 @@
     }
   }
 
+  &__body {
+    overflow: hidden;
+    margin-top: 21px;
+    transition: all $animation;
+  }
+
   &__item {
     &:not(:last-child) {
       margin-bottom: 15px;
@@ -41,7 +48,6 @@
   }
 
   &__more {
-    margin-top: 15px;
     border-bottom: 1px solid transparent;
     font-weight: 400;
     font-size: 16px;
@@ -49,6 +55,10 @@
     color: #4290C9;
     transition: all $animation;
     transition-property: border-color;
+
+    &.hide {
+      margin-top: 15px;
+    }
 
     &:hover {
       border-color: currentColor;
@@ -58,15 +68,14 @@
   &.hidden {
     .widget {
       &__title {
-        margin: 0;
-
         &::after {
           transform: translateY(-50%) rotate(-180deg);
         }
       }
 
       &__body {
-        display: none;
+        margin-top: 0;
+        height: 0;
       }
     }
   }

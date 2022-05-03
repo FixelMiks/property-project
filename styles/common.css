@@ -416,54 +416,6 @@ button {
   margin-right: 10px;
 }
 
-.form-btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 100%;
-  height: 50px;
-  border: 1px solid #d6d6d6;
-  border-radius: 4px;
-  background-color: transparent;
-  font-family: inherit;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 1;
-  text-align: center;
-  cursor: pointer;
-  -webkit-transition: background-color 0.2s ease-in;
-  transition: background-color 0.2s ease-in;
-}
-
-.form-btn + .form-btn {
-  margin-top: 10px;
-}
-
-.form-btn:hover {
-  background-color: #e7e7e7;
-}
-
-.form-btn img {
-  margin-right: 6px;
-}
-
-.form-btn--submit {
-  background-color: #ffcf26;
-  border: none;
-  color: #000;
-}
-
-.form-btn--submit:hover {
-  background-color: #ffe173;
-}
-
 .container {
   margin: 0 auto;
   padding: 0 15px;
@@ -491,17 +443,9 @@ button {
   position: absolute;
   top: 50%;
   left: 0;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 20px;
-  height: 20px;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
   border: 1px solid #777;
   border-radius: 50%;
   background-color: #fff;
@@ -515,6 +459,9 @@ button {
 
 .radio__btn::after {
   content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
   display: inline-block;
   border-radius: 50%;
   width: 8px;
@@ -522,6 +469,8 @@ button {
   background-color: #3C3C3C;
   opacity: 0;
   visibility: hidden;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   -webkit-transition-property: opacity, visibility;
@@ -571,17 +520,9 @@ button {
   position: absolute;
   top: 50%;
   left: 0;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 20px;
-  height: 20px;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
   border: 1px solid #777;
   border-radius: 2px;
   background-color: #fff;
@@ -595,6 +536,9 @@ button {
 
 .checkbox__btn::after {
   content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
   display: inline-block;
   border-radius: 50%;
   width: 16px;
@@ -605,6 +549,8 @@ button {
   background-position: center;
   opacity: 0;
   visibility: hidden;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   -webkit-transition-property: opacity, visibility;
@@ -654,15 +600,7 @@ button {
   position: absolute;
   top: 50%;
   left: 0;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: inline-block;
   border-radius: 10px;
   width: 37px;
   height: 20px;
@@ -677,11 +615,20 @@ button {
 
 .switch__btn::after {
   content: "";
+  position: absolute;
+  top: 50%;
+  left: calc(0% + 2px);
   display: inline-block;
   border-radius: 50%;
   width: 16px;
   height: 16px;
   background-color: #3C3C3C;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition-property: left;
+  transition-property: left;
 }
 
 .switch__title {
@@ -697,8 +644,101 @@ button {
   background-color: #ffe074;
 }
 
+.switch__input:checked ~ .switch__btn::after {
+  left: calc(100% - 19px);
+}
+
 .switch__input:checked ~ .switch__title {
   font-weight: 700;
+}
+
+.btn {
+  display: block;
+  min-width: 270px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 15px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000;
+  background-color: #FFCF26;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition-property: border-color, background-color;
+  transition-property: border-color, background-color;
+}
+
+.btn[type="reset"] {
+  border-color: #D6D6D6;
+  background-color: transparent;
+}
+
+.btn[type="reset"] span {
+  padding-left: 30px;
+  background: url("../img/icons/close.svg") no-repeat 24px;
+  background-position: left center;
+}
+
+.btn:hover {
+  border-color: #e1b720;
+  background-color: #e1b720;
+}
+
+.btn-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 4px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 24px;
+  height: 24px;
+  background: #f4f4f4;
+  cursor: pointer;
+}
+
+.btn-menu span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: #000;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition-property: opacity, visibility, -webkit-transform;
+  transition-property: opacity, visibility, -webkit-transform;
+  transition-property: transform, opacity, visibility;
+  transition-property: transform, opacity, visibility, -webkit-transform;
+}
+
+.btn-menu.is-active span {
+  width: 21px;
+}
+
+.btn-menu.is-active span:nth-child(1) {
+  -webkit-transform: rotate(45deg) translate(4px, 4px);
+          transform: rotate(45deg) translate(4px, 4px);
+}
+
+.btn-menu.is-active span:nth-child(2) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.btn-menu.is-active span:nth-child(3) {
+  -webkit-transform: rotate(-45deg) translate(4px, -4px);
+          transform: rotate(-45deg) translate(4px, -4px);
 }
 
 .general {
@@ -708,10 +748,17 @@ button {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-column-gap: 30px;
-          column-gap: 30px;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+@media (min-width: 1024px) {
+  .general {
+    -webkit-column-gap: 30px;
+            column-gap: 30px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }
 
 .main {
@@ -733,7 +780,8 @@ button {
 .card {
   position: relative;
   display: inline-block;
-  width: 270px;
+  width: 100%;
+  min-width: 270px;
   text-decoration: none;
   background-color: #fff;
   -webkit-transition: all 0.2s ease-in;
@@ -770,6 +818,13 @@ button {
 .card__badge--credit {
   background-color: #11be75;
   color: #fff;
+}
+
+.card__img img {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .card__content {
@@ -821,28 +876,62 @@ button {
           transform: translateY(-5px);
 }
 
-.sidebar__form {
-  min-width: 270px;
+.sidebar__wrapper {
   background-color: #f4f4f4;
 }
 
+.sidebar__form {
+  position: relative;
+  min-width: 270px;
+}
+
+.sidebar__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
 @media (min-width: 1024px) {
-  .sidebar__form {
-    width: 270px;
+  .sidebar .btn-menu {
+    display: none;
   }
 }
 
 @media (max-width: 1023px) {
-  .sidebar__form {
+  .sidebar {
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition-property: background-color;
+    transition-property: background-color;
+  }
+  .sidebar .btn-menu {
+    position: absolute;
+    top: 15px;
+    left: calc((24px + 15px) * (-1));
+  }
+  .sidebar__wrapper {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     bottom: 0;
-    overflow-y: scroll;
-    padding: 30px;
     height: 100vh;
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    padding: 30px 15px;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
   }
   .sidebar.is-open {
     position: fixed;
@@ -850,11 +939,11 @@ button {
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.5);
   }
-  .sidebar.is-open .sidebar__form {
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%);
+  .sidebar.is-open .sidebar__wrapper {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
 
@@ -864,7 +953,7 @@ button {
 
 .widget__title {
   position: relative;
-  margin: 0 0 21px;
+  margin: 0;
   padding-right: 30px;
   font-weight: 700;
   font-size: 18px;
@@ -894,12 +983,18 @@ button {
   transition-property: transform, -webkit-transform;
 }
 
+.widget__body {
+  overflow: hidden;
+  margin-top: 21px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
 .widget__item:not(:last-child) {
   margin-bottom: 15px;
 }
 
 .widget__more {
-  margin-top: 15px;
   border-bottom: 1px solid transparent;
   font-weight: 400;
   font-size: 16px;
@@ -911,12 +1006,12 @@ button {
   transition-property: border-color;
 }
 
-.widget__more:hover {
-  border-color: currentColor;
+.widget__more.hide {
+  margin-top: 15px;
 }
 
-.widget.hidden .widget__title {
-  margin: 0;
+.widget__more:hover {
+  border-color: currentColor;
 }
 
 .widget.hidden .widget__title::after {
@@ -925,7 +1020,8 @@ button {
 }
 
 .widget.hidden .widget__body {
-  display: none;
+  margin-top: 0;
+  height: 0;
 }
 
 .location__row {
